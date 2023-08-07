@@ -1,23 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:login_page/home.dart';
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key, required this.title});
-  final String title;
+  const SignUpPage({super.key});
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   bool _check = false;
 
   @override
@@ -118,7 +109,14 @@ class _SignUpPageState extends State<SignUpPage> {
                     ],
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return const HomePage();
+                        })
+                      );
+                    },
                     child: Text('Sign Up'),
                     style: ButtonStyle(
                         foregroundColor:
